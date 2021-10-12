@@ -1,2 +1,5 @@
-# HelloMauiMarkup
- An iOS, Android, macOS + Windows app built using .NET MAUI, demonstrating how to use the .NET MAUI Markup Community Toolkit
+# HelloMauiToolkit
+ An example of a .NET MAUI app using the .NET MAUI Markup Community Toolkit: https://github.com/CommunityToolkit/Maui.Markup.
+
+
+
