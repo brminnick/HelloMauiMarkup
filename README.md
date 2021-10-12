@@ -1,3 +1,5 @@
+[![Mobile](https://github.com/brminnick/HelloMauiMarkup/actions/workflows/mobile.yml/badge.svg)](https://github.com/brminnick/HelloMauiMarkup/actions/workflows/mobile.yml)
+
 # HelloMauiMarkup
 The [.NET MAUI Markup Community Toolkit](https://github.com/communitytoolkit/maui.markup) is a collection of Fluent C# Extension Methods that allows developers to continue architecting their apps using MVVM, Bindings, Resource Dictionaries, etc., without the need for XAML.
 
