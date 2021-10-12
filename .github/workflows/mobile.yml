@@ -1,0 +1,34 @@
+name: Mobile
+
+on:
+  push:
+    branches:
+      - "main"
+  pull_request:
+    branches: 
+      - "*"
+
+jobs:
+    Build_Android:
+      runs-on: macos-latest
+
+      steps:
+      - uses: actions/checkout@v1
+      
+      - name: Setup .NET v6.0
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+          include-prerelease: true
+
+      - name: Install .NET MAUI Workload
+        run: |
+          dotnet workload install maui
+
+      - name: Restore NuGet 
+        run: |
+          dotnet restore ./src
+          
+      - name: Build Android App
+        run: |                    
+          dotnet build ./src -f net6.0-android
