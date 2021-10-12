@@ -7,7 +7,7 @@ This specific example uses `CommunityToolkit.Maui.Markup` and `CommunityToolkit.
 
 #### Add Markup Namespace
 
-At the top of your C# file, add the following `using static`
+At the top of **MainPage.cs**, add the following `using static`
 
 ```cs
 using static CommunityToolkit.Maui.Markup.GridRowsColumns;
