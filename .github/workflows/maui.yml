@@ -87,7 +87,7 @@ jobs:
       - name: Maui Check
         run: |
           dotnet tool install -g Redth.Net.Maui.Check
-          maui-check --non-interactive --fix --ci
+          maui-check --non-interactive --fix --ci --skip xcode --skip VisualStudioWindowsCheckup
 
       - name: Restore NuGet
         run: |
