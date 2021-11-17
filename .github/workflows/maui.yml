@@ -85,7 +85,9 @@ jobs:
           dotnet workload install maui
 
       - name: Maui Check
-        run: 'maui-check --non-interactive --fix --ci'
+        run: |
+          dotnet tool install -g Redth.Net.Maui.Check
+          maui-check --non-interactive --fix --ci
 
       - name: Restore NuGet
         run: |
