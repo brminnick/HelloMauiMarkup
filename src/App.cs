@@ -2,5 +2,5 @@
 
 class App : Microsoft.Maui.Controls.Application
 {
-    public App(MainPage mainPage) => MainPage = mainPage;
+	public App(MainPage mainPage) => MainPage = mainPage;
 }

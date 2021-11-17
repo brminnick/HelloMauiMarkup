@@ -8,26 +8,26 @@ namespace HelloMauiMarkup;
 
 abstract class BaseViewModel : INotifyPropertyChanged
 {
-    readonly WeakEventManager _propertyChangedEventManager = new();
+	readonly WeakEventManager _propertyChangedEventManager = new();
 
-    event PropertyChangedEventHandler? INotifyPropertyChanged.PropertyChanged
-    {
-        add => _propertyChangedEventManager.AddEventHandler(value);
-        remove => _propertyChangedEventManager.RemoveEventHandler(value);
-    }
+	event PropertyChangedEventHandler? INotifyPropertyChanged.PropertyChanged
+	{
+		add => _propertyChangedEventManager.AddEventHandler(value);
+		remove => _propertyChangedEventManager.RemoveEventHandler(value);
+	}
 
-    protected void SetProperty<T>(ref T backingStore, in T value, in System.Action? onChanged = null, [CallerMemberName] in string propertyname = "")
-    {
-        if (EqualityComparer<T>.Default.Equals(backingStore, value))
-            return;
+	protected void SetProperty<T>(ref T backingStore, in T value, in System.Action? onChanged = null, [CallerMemberName] in string propertyname = "")
+	{
+		if (EqualityComparer<T>.Default.Equals(backingStore, value))
+			return;
 
-        backingStore = value;
+		backingStore = value;
 
-        onChanged?.Invoke();
+		onChanged?.Invoke();
 
-        OnPropertyChanged(propertyname);
-    }
+		OnPropertyChanged(propertyname);
+	}
 
-    protected void OnPropertyChanged([CallerMemberName] in string propertyName = "") =>
-        _propertyChangedEventManager.RaiseEvent(this, new PropertyChangedEventArgs(propertyName), nameof(INotifyPropertyChanged.PropertyChanged));
+	protected void OnPropertyChanged([CallerMemberName] in string propertyName = "") =>
+		_propertyChangedEventManager.RaiseEvent(this, new PropertyChangedEventArgs(propertyName), nameof(INotifyPropertyChanged.PropertyChanged));
 }
