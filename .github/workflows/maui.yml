@@ -1,4 +1,4 @@
-name: Mobile
+name: MAUI
 
 on:
   push:
@@ -19,7 +19,6 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: "6.0.x"
-          include-prerelease: true
 
       - name: Install .NET MAUI Workload
         run: |
@@ -33,7 +32,7 @@ jobs:
         run: |
           dotnet build ./src -f net6.0-android
 
-  Build_iOS_Macatalyst:
+  Build_iOS_MacCatalyst:
     runs-on: macos-latest
 
     steps:
@@ -43,7 +42,6 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: "6.0.x"
-          include-prerelease: true
 
       - name: Install .NET MAUI Workload
         run: |
@@ -52,12 +50,6 @@ jobs:
       - name: Restore NuGet
         run: |
           dotnet restore ./src
-
-      - name: Set default Xcode 13.1
-        run: |
-          XCODE_ROOT=/Applications/Xcode_13.1.app
-          echo "MD_APPLE_SDK_ROOT=$XCODE_ROOT" >> $GITHUB_ENV
-          sudo xcode-select -s $XCODE_ROOT
 
       - name: Build iOS App
         run: |
@@ -77,7 +69,6 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: "6.0.x"
-          include-prerelease: true
 
       - name: Install .NET MAUI Workload
         run: |
@@ -87,7 +78,7 @@ jobs:
         run: |
           dotnet restore ./src
 
-      - name: Build Android App
+      - name: Build Windows App
         run: |
-          dotnet build ./src
+          dotnet build ./src -f net6.0-windows10.0.19041
 
