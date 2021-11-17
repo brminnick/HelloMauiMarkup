@@ -33,7 +33,7 @@ jobs:
           dotnet build ./src -f net6.0-android
 
   Build_iOS_MacCatalyst:
-    runs-on: macos-latest
+    runs-on: macos-11
 
     steps:
       - uses: actions/checkout@v1
