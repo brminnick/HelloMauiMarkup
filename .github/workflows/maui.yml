@@ -43,6 +43,9 @@ jobs:
         with:
           dotnet-version: "6.0.x"
 
+      - name: Install Xcode
+        run : 'echo '##vso[task.setvariable variable=MD_APPLE_SDK_ROOT;]'/Applications/Xcode_13.1.app;sudo xcode-select --switch /Applications/Xcode_$(XcodeVersion).app/Contents/Developer'
+
       - name: Install .NET MAUI Workload
         run: |
           dotnet workload install maui
@@ -70,6 +73,11 @@ jobs:
         with:
           dotnet-version: "6.0.x"
 
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
       - name: Install .NET MAUI Workload
         run: |
           dotnet workload install maui
@@ -80,5 +88,5 @@ jobs:
 
       - name: Build Windows App
         run: |
-          dotnet build ./src -f net6.0-windows10.0.19041
+          dotnet build ./src
 
