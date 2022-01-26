@@ -15,13 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Setup .NET v6.0
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: "6.0.x"
-
-      - name: Install .NET MAUI Workload
+      - name: Install .NET 6.0.2-preview.22055.15 + .NET MAUI Workload
         run: |
+          curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --version 6.0.200-preview.22055.15 --quality preview
           dotnet workload install maui
 
       - name: Restore NuGet
@@ -38,13 +34,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Setup .NET v6.0
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: "6.0.x"
-
-      - name: Install .NET MAUI Workload
+      - name: Install .NET 6.0.2-preview.22055.15 + .NET MAUI Workload
         run: |
+          curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --version 6.0.200-preview.22055.15 --quality preview
           dotnet workload install maui
 
       - name: Restore NuGet
@@ -66,13 +58,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Setup .NET v6.0
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: "6.0.x"
-
-      - name: Install .NET MAUI Workload
+      - name: Install .NET 6.0.2-preview.22055.15 + .NET MAUI Workload
         run: |
+          curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --version 6.0.200-preview.22055.15 --quality preview
           dotnet workload install maui
 
       - name: Restore NuGet
@@ -94,23 +82,21 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Setup .NET v6.0
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: "6.0.x"
+      - name: Install .NET 6.0.2-preview.22055.15 + .NET MAUI Workload
+        run: |
+          curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --version 6.0.200-preview.22055.15 --quality preview
+          dotnet workload install maui
 
       - uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Install .NET MAUI Workload
-        run: |
-          dotnet workload install maui
       - name: Maui Check
         run: |
           dotnet tool install -g Redth.Net.Maui.Check
           maui-check --non-interactive --fix --ci --skip xcode --skip VisualStudioWindowsCheckup
+
       - name: Restore NuGet
         run: |
           dotnet restore ./src
