@@ -83,8 +83,10 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Install .NET 6.0.2-preview.22055.15 + .NET MAUI Workload
+        shell: pwsh
         run: |
-          curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --version 6.0.200-preview.22055.15 --quality preview
+          wget https://dot.net/v1/dotnet-install.ps1 -OutFile C:\dotnet-install.ps1
+          C:\dotnet-install.ps1 -Version 6.0.200-preview.22055.15
           dotnet workload install maui
 
       - uses: actions/setup-java@v2
@@ -100,6 +102,7 @@ jobs:
       - name: Restore NuGet
         run: |
           dotnet restore ./src
+
       - name: Build Windows App
         run: |
           dotnet build ./src
