@@ -9,9 +9,9 @@ public static class MauiProgram
 {
 	public static MauiApp CreateMauiApp()
 	{
-		var builder = MauiApp.CreateBuilder()
-		builder
-			.UseMauiApp<App>()
+		var builder = MauiApp.CreateBuilder();
+
+		builder.UseMauiApp<App>()
 			.UseMauiCommunityToolkitMarkup()
 			.ConfigureFonts(fonts =>
 			{
