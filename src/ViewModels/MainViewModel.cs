@@ -1,23 +1,14 @@
-﻿using System;
-using System.Windows.Input;
-using Microsoft.Maui.Controls;
+﻿using System.Windows.Input;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace HelloMauiMarkup;
 
-class MainViewModel : BaseViewModel
+partial class MainViewModel : ObservableObject
 {
+	[ObservableProperty]
 	int _clickCount = 0;
 
-	public MainViewModel()
-	{
-		ClickMeButtonCommand = new Command(() => ClickCount++);
-	}
-
-	public int ClickCount
-	{
-		get => _clickCount;
-		set => SetProperty(ref _clickCount, value);
-	}
-
-	public ICommand ClickMeButtonCommand { get; }
+	[ICommand]
+	public void IncrementClickMeButton() => ClickCount++;
 }

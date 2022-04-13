@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui.Controls;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.PlatformConfiguration;
 using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
 
@@ -13,12 +14,12 @@ abstract class BaseContentPage : ContentPage
 	}
 }
 
-abstract class BaseContentPage<T> : BaseContentPage where T : BaseViewModel
+abstract class BaseContentPage<T> : BaseContentPage where T : ObservableObject
 {
 	protected BaseContentPage(in T viewModel, in bool shouldUseSafeArea = false) : base(shouldUseSafeArea)
 	{
-		BindingContext = ViewModel = viewModel;
+		base.BindingContext = viewModel;
 	}
 
-	protected T ViewModel { get; }
+	protected new T BindingContext => (T)base.BindingContext;
 }
