@@ -2,6 +2,7 @@
 using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Hosting;
 using CommunityToolkit.Maui.Markup;
+using Microsoft.Maui.Devices;
 
 namespace HelloMauiMarkup;
 
@@ -19,6 +20,8 @@ public static class MauiProgram
 			});
 
 		builder.Services.AddSingleton<App>();
+
+		builder.Services.AddSingleton(DeviceInfo.Current);
 
 		builder.Services.AddTransient<MainPage>();
 		builder.Services.AddTransient<MainViewModel>();
