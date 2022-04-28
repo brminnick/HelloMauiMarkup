@@ -1,6 +1,6 @@
 ﻿namespace HelloMauiMarkup;
 
-class App : Microsoft.Maui.Controls.Application
+class App : Application
 {
 	public App(MainPage mainPage) => MainPage = mainPage;
 }

@@ -1,5 +1,4 @@
 ﻿using CommunityToolkit.Maui.Markup;
-using Microsoft.Maui.Controls;
 
 namespace HelloMauiMarkup;
 
@@ -34,7 +33,7 @@ class MainPage : BaseContentPage<MainViewModel>
 					new Button()
 						.Text("Click Me")
 						.Font(bold: true)
-						.BindCommand(nameof(BindingContext.IncrementClickMeButtonCommand))
+						.BindCommand(nameof(MainViewModel.IncrementClickMeButtonCommand))
 						.CenterHorizontal(),
 
 					new Image()

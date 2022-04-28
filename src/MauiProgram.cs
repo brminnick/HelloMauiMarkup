@@ -1,8 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Maui.Controls.Hosting;
-using Microsoft.Maui.Hosting;
-using CommunityToolkit.Maui.Markup;
-using Microsoft.Maui.Devices;
+﻿using CommunityToolkit.Maui.Markup;
 
 namespace HelloMauiMarkup;
 
