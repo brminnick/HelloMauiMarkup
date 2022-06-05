@@ -1,5 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Microsoft.Maui.Controls.PlatformConfiguration;
+﻿using Microsoft.Maui.Controls.PlatformConfiguration;
 using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
 
 namespace HelloMauiMarkup;
@@ -13,7 +12,7 @@ abstract class BaseContentPage : ContentPage
 	}
 }
 
-abstract class BaseContentPage<T> : BaseContentPage where T : ObservableObject
+abstract class BaseContentPage<T> : BaseContentPage where T : BaseViewModel
 {
 	protected BaseContentPage(in T viewModel, in bool shouldUseSafeArea = false) : base(shouldUseSafeArea)
 	{

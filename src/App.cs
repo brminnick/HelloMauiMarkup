@@ -2,5 +2,5 @@
 
 class App : Application
 {
-	public App(MainPage mainPage) => MainPage = mainPage;
+	public App(AppShell appShell) => MainPage = appShell;
 }

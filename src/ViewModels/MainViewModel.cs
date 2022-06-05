@@ -4,7 +4,7 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace HelloMauiMarkup;
 
-partial class MainViewModel : ObservableObject
+partial class MainViewModel : BaseViewModel
 {
 	[ObservableProperty]
 	int _clickCount = 0;
