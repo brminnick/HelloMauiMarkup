@@ -9,6 +9,6 @@ partial class MainViewModel : BaseViewModel
 	[ObservableProperty]
 	int _clickCount = 0;
 
-	[ICommand]
+	[RelayCommand]
 	public void IncrementClickMeButton() => ClickCount++;
 }
