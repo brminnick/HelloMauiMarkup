@@ -6,7 +6,7 @@ namespace HelloMauiMarkup;
 abstract class BaseContentPage : ContentPage
 {
 	protected BaseContentPage(in bool shouldUseSafeArea = false)
-	{
+	{	
 		On<iOS>().SetUseSafeArea(shouldUseSafeArea);
 		On<iOS>().SetModalPresentationStyle(UIModalPresentationStyle.FormSheet);
 	}

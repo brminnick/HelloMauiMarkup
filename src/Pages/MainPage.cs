@@ -37,7 +37,7 @@ class MainPage : BaseContentPage<MainViewModel>
 						.CenterHorizontal(),
 
 					new Image()
-						.Source("dotnet_bot.png")
+						.Source("dotnet_bot")
 						.Size(250, 310)
 						.CenterHorizontal()
 				}

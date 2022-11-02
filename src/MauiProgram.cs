@@ -11,12 +11,10 @@ public static class MauiProgram
 						.UseMauiApp<App>()
 						.UseMauiCommunityToolkit()
 						.UseMauiCommunityToolkitMarkup()
-						.ConfigureFonts(fonts =>fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular"));
+						.ConfigureFonts(fonts => fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular"));
 
 		builder.Services.AddSingleton<App>();
 		builder.Services.AddSingleton<AppShell>();
-
-		builder.Services.AddSingleton(DeviceInfo.Current);
 
 		builder.Services.AddTransientWithShellRoute<MainPage, MainViewModel>($"//{nameof(MainPage)}");
 
