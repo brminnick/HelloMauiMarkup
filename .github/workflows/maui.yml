@@ -32,7 +32,7 @@ jobs:
 
       - name: Build Android App
         run: |
-          dotnet build ./src -f net6.0-android
+          dotnet build ./src -f net7.0-android
 
   Build_iOS:
     runs-on: macos-12
@@ -62,7 +62,7 @@ jobs:
 
       - name: Build iOS App
         run: |
-          dotnet build ./src -f net6.0-ios
+          dotnet build ./src -f net7.0-ios
           
   Build_MacCatalyst:
     runs-on: macos-12
@@ -92,7 +92,7 @@ jobs:
 
       - name: Build macOS App
         run: |
-          dotnet build ./src -f net6.0-maccatalyst
+          dotnet build ./src -f net7.0-maccatalyst
 
   Build_Windows:
     runs-on: windows-latest
