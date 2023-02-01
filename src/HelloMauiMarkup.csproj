@@ -31,6 +31,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
     <CreatePackage>false</CreatePackage>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
+    <CreatePackage>false</CreatePackage>
+  </PropertyGroup>
   <ItemGroup>
     <!-- App Icon -->
     <MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4" />
@@ -47,7 +50,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CommunityToolkit.Maui.Markup" Version="2.1.0" />
+    <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0-build-156.86736" />
     <PackageReference Include="CommunityToolkit.MVVM" Version="8.1.0" />
     <PackageReference Include="CommunityToolkit.Maui" Version="4.0.0" />
   </ItemGroup>
