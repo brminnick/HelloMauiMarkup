@@ -28,13 +28,17 @@ class MainPage : BaseContentPage<MainViewModel>
 					new Label()
 						.Font(size: 18, bold: true)
 						.CenterHorizontal()
-						.Bind<Label, int, string>(Label.TextProperty, nameof(BindingContext.ClickCount), convert: count => $"Current Count: {count}"),
+						.Bind(Label.TextProperty,
+								static (MainViewModel vm) => vm.ClickCount,
+								convert: count => $"Current Count: {count}"),
 
 					new Button()
 						.Text("Click Me")
 						.Font(bold: true)
-						.BindCommand(nameof(MainViewModel.IncrementClickMeButtonCommand))
-						.CenterHorizontal(),
+						.CenterHorizontal()
+						.Bind(Button.CommandProperty,
+								static (MainViewModel vm) => vm.IncrementClickMeButtonCommand,
+								mode: BindingMode.OneTime),
 
 					new Image()
 						.Source("dotnet_bot")
