@@ -13,13 +13,13 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup .NET v7.0
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
-            6.0.x
+            8.0.x
             7.0.x
 
       - name: Install .NET MAUI Workload
@@ -32,19 +32,19 @@ jobs:
 
       - name: Build Android App
         run: |
-          dotnet build ./src -f net7.0-android
+          dotnet build ./src -f net8.0-android
 
   Build_iOS:
     runs-on: macos-13
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup .NET v7.0
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
-            6.0.x
+            8.0.x
             7.0.x
 
       - name: Install .NET MAUI Workload
@@ -62,19 +62,19 @@ jobs:
 
       - name: Build iOS App
         run: |
-          dotnet build ./src -f net7.0-ios
+          dotnet build ./src -f net8.0-ios
           
   Build_MacCatalyst:
     runs-on: macos-13
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup .NET v7.0
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
-            6.0.x
+            8.0.x
             7.0.x
 
       - name: Install .NET MAUI Workload
@@ -92,24 +92,24 @@ jobs:
 
       - name: Build macOS App
         run: |
-          dotnet build ./src -f net7.0-maccatalyst
+          dotnet build ./src -f net8.0-maccatalyst
 
   Build_Windows:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-java@v3
+      - uses: actions/setup-java@v4
         with:
           distribution: 'microsoft'
           java-version: '11'
 
       - name: Setup .NET v7.0
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
-            6.0.x
+            8.0.x
             7.0.x
 
       - name: Install .NET MAUI Workload
