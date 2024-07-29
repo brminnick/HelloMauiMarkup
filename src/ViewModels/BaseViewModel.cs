@@ -2,8 +2,7 @@
 
 namespace HelloMauiMarkup;
 
-[INotifyPropertyChanged]
-abstract partial class BaseViewModel
+abstract partial class BaseViewModel : ObservableObject
 {
 	public BaseViewModel()
 	{
